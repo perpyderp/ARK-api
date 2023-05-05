@@ -4,3 +4,7 @@
 [dev]
   command = "npm run dev"
   publish = "dist"
+[build.environment]
+  NODE_ENV = "production"
+[context.production.environment]
+  SERVER_PORT = "80"
