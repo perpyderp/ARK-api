@@ -15,6 +15,7 @@ const port = process.env.SERVER_PORT;
 app.use('/api', creatureRoutes);
 app.use(express.json());
 
+console.log("Connecting to database...");
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 db.once('open', () => {
   console.log('MongoDB connection established');
