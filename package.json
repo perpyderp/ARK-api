@@ -1,0 +1,24 @@
+{
+  "name": "ark-api",
+  "version": "1.0.2",
+  "description": "RESTful ARK API using Express framework",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/perpyderp/ARK-REST-API.git"
+  },
+  "author": "Perp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/perpyderp/ARK-REST-API/issues"
+  },
+  "homepage": "https://github.com/perpyderp/ARK-REST-API#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.1.0"
+  }
+}
