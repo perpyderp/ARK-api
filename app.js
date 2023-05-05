@@ -24,7 +24,9 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 db.once('open', () => {
   console.log('MongoDB connection established');
   // Start server once connected to database
-  app.listen(port, () => {
-    console.log(`ARK API listening on port ${port}`);
-  })
+
+});
+
+app.listen(port, () => {
+  console.log(`ARK API listening on port ${port}`);
 });
