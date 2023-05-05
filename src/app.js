@@ -4,14 +4,15 @@
 
 */
 
+
 const express = require('express');
 const creatureRoutes = require('./routes/creatureRoutes');
 const db = require('./db');
 
-require('dotenv').config({ path: '../.env' });
+require('dotenv').config({ path: '../../.env' });
 
 const app = express()
-const port = process.env.PORT;
+const port = process.env.SERVER_PORT;
 app.use('/api', creatureRoutes);
 app.use(express.json());
 
