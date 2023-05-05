@@ -1,12 +1,12 @@
 [build]
   command = "npm run build"
   publish = "dist"
-
+[dev]
+  command = "npm run dev"
+  publish = "dist"
 [build.environment]
-  NODE_VERSION = "lts/*"
-
-[[redirects]]
-  from = "/api/*"
-  to = "http://localhost:3000/:splat"
-  status = 200
-  force = true
+  NODE_ENV = "production"
+[context.production.environment]
+  SERVER_PORT = "80"
+[context.deploy-preview.environment]
+  SERVER_PORT = "3000"
