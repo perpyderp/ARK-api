@@ -15,6 +15,10 @@ const port = process.env.SERVER_PORT;
 app.use('/api', creatureRoutes);
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('Welcome to the ARK API');
+});
+
 console.log("Connecting to database...");
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 db.once('open', () => {
