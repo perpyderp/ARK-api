@@ -1,10 +1,3 @@
-/*
-    Author: Jacob Cuison
-    Entry point for the ARK API, and sets up the middleware, routes, and error handling
-
-*/
-
-
 const express = require('express');
 
 const creatureRoutes = require('./routes/creatureRoutes');
@@ -30,3 +23,8 @@ db.once('open', () => {
     console.log(`ARK API listening on port ${port}`);
   })
 });
+
+// Export the Express app as a serverless function
+module.exports.handler = async (event, context) => {
+    return await app(event, context);
+};
