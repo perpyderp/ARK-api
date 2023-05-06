@@ -1,6 +1,7 @@
 [build]
   command = "npm run build" # Replace with your build command
   functions = "functions"  # The directory where your serverless functions reside
+  publish = "dist"
 
 [[redirects]]
   from = "/api/*"
