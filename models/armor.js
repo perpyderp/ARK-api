@@ -14,4 +14,4 @@ const armorSchema = new mongoose.Schema({
 })
 
 
-module.exports = mongoose.model('Creature', creatureSchema);
+module.exports = mongoose.model('Armor', armorSchema);
