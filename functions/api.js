@@ -1,9 +1,9 @@
 const express = require('express');
 
-const creatureRoutes = require('./routes/creatureRoutes');
-const db = require('./db');
+const creatureRoutes = require('../src/routes/creatureRoutes');
+const db = require('../src/db');
 
-require('dotenv').config({ path: '../../.env' });
+require('dotenv');
 
 const app = express()
 const port = process.env.SERVER_PORT;
