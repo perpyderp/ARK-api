@@ -8,6 +8,7 @@
 const express = require('express');
 
 const creatureRoutes = require('./routes/creatureRoutes');
+const armorRoutes = require('./routes/armorRoutes');
 const db = require('./db');
 
 require('dotenv').config({ path: './env' });
@@ -15,6 +16,7 @@ require('dotenv').config({ path: './env' });
 const app = express()
 const port = process.env.PORT || 3000;
 app.use('/api', creatureRoutes);
+app.use('/api', armorRoutes);
 app.use(express.json());
 
 app.get('/', (req, res) => {
