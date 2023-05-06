@@ -13,7 +13,7 @@ const db = require('./db');
 require('dotenv').config({ path: './env' });
 
 const app = express()
-const port = process.env.SERVER_PORT;
+const port = process.env.PORT || 3000;
 app.use('/api', creatureRoutes);
 app.use(express.json());
 
