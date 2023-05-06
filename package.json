@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "build": "cp _redirects dist/ && webpack --config webpack.config.js --mode production"
+    "build": "webpack --config webpack.config.js --mode production"
   },
   "repository": {
     "type": "git",
@@ -20,8 +20,7 @@
   "dependencies": {
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "mongoose": "^7.1.0",
-    "serverless-http": "^3.2.0"
+    "mongoose": "^7.1.0"
   },
   "devDependencies": {
     "webpack": "^5.82.0",
