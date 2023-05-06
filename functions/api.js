@@ -10,7 +10,7 @@ require('dotenv');
 
 const app = express()
 const port = process.env.SERVER_PORT;
-app.use('/api', creatureRoutes);
+app.use('/.netlify/functions/api', creatureRoutes);
 app.use(express.json());
 
 router.get('/', (req, res) => {
