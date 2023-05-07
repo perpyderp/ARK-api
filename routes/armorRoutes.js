@@ -5,6 +5,6 @@ const armorController = require('../controllers/armorController');
 
 // Get all creatures
 router.get('/armors', armorController.getAllArmors);
-router.get('/creatures/:name', armorController.getArmorType);
+router.get('/armors/:armorType', armorController.getArmorType);
 
 module.exports = router;

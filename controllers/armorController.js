@@ -12,7 +12,7 @@ exports.getAllArmors = async (req, res) => {
 
 exports.getArmorType = async (req, res) => {
     try {
-        const armor = await Armor.findOne({ armorType: req.params.armortype });
+        const armor = await Armor.findOne({ armorType: req.params.armorType });
         if(!armor) {
             return res.status(404).json({ message: req.params.armortype + ' not found'});
         }

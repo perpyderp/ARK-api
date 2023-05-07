@@ -9,9 +9,14 @@ const armorSchema = new mongoose.Schema({
     'weight': { type: String, required: true },
     'durability': { type: String, required: true },
     'foundIn': { type: String, required: true },
-    'ingredients': { type: String, required: true },
+    'ingredients': { 
+        type: [{
+            quantity: { type: Number },
+            material: { type: String }
+        }], 
+        required: true },
     'url': { type: String, require: true }
-})
+});
 
 
 module.exports = mongoose.model('Armor', armorSchema);
