@@ -4,6 +4,6 @@ const creatureController = require('../controllers/creatureController');
 
 // Get all creatures
 router.get('/creatures', creatureController.getCreatures);
-router.get('/creatures/:name', creatureController.getCreatureByName);
+router.get('/creatures/:identifier', creatureController.getCreatureByNameOrId);
 
 module.exports = router;

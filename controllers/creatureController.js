@@ -1,8 +1,11 @@
 const Creature = require('../models/creature');
+const mongoose = require('mongoose');
 
 exports.getCreatures = async (req, res) => {
     try {
-        const creatures = await Creature.find();
+        const limit = parseInt(req.query.limit); // Get the limit from query parameters
+
+        const creatures = await Creature.find().limit(limit || 5);;
         res.json(creatures);
     } 
     catch (error) {
@@ -10,11 +13,22 @@ exports.getCreatures = async (req, res) => {
     }
 };
 
-exports.getCreatureByName = async (req, res) => {
+exports.getCreatureByNameOrId = async (req, res) => {
     try {
-        const creature = await Creature.findOne({ name: req.params.name });
+        const identifier = req.params.identifier;
+        
+        let creature;
+
+        if (mongoose.Types.ObjectId.isValid(identifier)) {
+          // Find by ID
+          creature = await Creature.findById(identifier);
+        } else {
+          // Find by name
+          creature = await Creature.findOne({ name: identifier });
+        }
+
         if(!creature) {
-            return res.status(404).json({ message: req.params.name + ' not found'});
+            return res.status(404).json({ message: identifier + ' not found'});
         }
         res.json(creature);
     }
