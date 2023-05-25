@@ -6,6 +6,7 @@
 
 
 const express = require('express');
+const cors = require('cors');
 
 const creatureRoutes = require('./routes/creatureRoutes');
 const armorRoutes = require('./routes/armorRoutes');
@@ -15,7 +16,10 @@ const db = require('./db');
 require('dotenv').config({ path: './env' });
 
 const app = express()
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
+app.use(cors({
+  origin: 'http://localhost:3000' // Replace with the URL of your React app
+}));
 app.use('/api', creatureRoutes);
 app.use('/api', armorRoutes);
 app.use('/api', eggTypeRoutes);
