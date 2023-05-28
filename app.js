@@ -18,13 +18,7 @@ require('dotenv').config({ path: './env' });
 const app = express()
 const port = process.env.PORT || 3001;
 app.use(cors({
-  origin: 'http://localhost:3000' // Replace with the URL of your React app
-},
-{
-  origin: 'https://ark-api.vercel.app/'
-},
-{
-  origin: 'https://ark-api-perpyderp.vercel.app/'
+  origin: process.env.CORS // Replace with the URL of your React app
 }
 ));
 app.use('/api', creatureRoutes);
