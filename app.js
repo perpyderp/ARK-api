@@ -18,7 +18,11 @@ require('dotenv').config({ path: './env' });
 const app = express()
 const port = process.env.PORT || 3001;
 app.use(cors({
-  origin: false
+  origin: ['https://ark-api.vercel.app',
+  'http://localhost:3000',
+  'https://ark-api-perpyderp.vercel.app/'
+  ],
+  allowedHeaders: ['Content-Type', 'Authorization'],
 }
 ));
 app.use('/api', creatureRoutes);
