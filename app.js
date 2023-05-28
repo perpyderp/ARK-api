@@ -18,7 +18,8 @@ require('dotenv').config({ path: './env' });
 const app = express()
 const port = process.env.PORT || 3001;
 app.use(cors({
-  origin: process.env.CORS // Replace with the URL of your React app
+  origin: process.env.CORS,
+  allowedHeaders: ['Content-Type', 'Authorization'],
 }
 ));
 app.use('/api', creatureRoutes);
