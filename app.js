@@ -21,7 +21,10 @@ app.use(cors({
   origin: 'http://localhost:3000' // Replace with the URL of your React app
 },
 {
-  origin: 'https://ark-oxcjyg697-perpyderp.vercel.app/'
+  origin: 'https://ark-api.vercel.app/'
+},
+{
+  origin: 'https://ark-api-perpyderp.vercel.app/'
 }
 ));
 app.use('/api', creatureRoutes);
