@@ -19,7 +19,11 @@ const app = express()
 const port = process.env.PORT || 3001;
 app.use(cors({
   origin: 'http://localhost:3000' // Replace with the URL of your React app
-}));
+},
+{
+  origin: 'https://ark-oxcjyg697-perpyderp.vercel.app/'
+}
+));
 app.use('/api', creatureRoutes);
 app.use('/api', armorRoutes);
 app.use('/api', eggTypeRoutes);
