@@ -5,7 +5,7 @@ exports.getCreatures = async (req, res) => {
     try {
         const limit = parseInt(req.query.limit); // Get the limit from query parameters
 
-        const creatures = await Creature.find().limit(limit || 5);;
+        const creatures = await Creature.find().limit(limit || 5);
         res.json(creatures);
     } 
     catch (error) {

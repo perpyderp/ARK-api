@@ -3,7 +3,7 @@ const EggType = require('../models/eggType');
 exports.getEggTypes = async (req, res) => {
     try {
         const eggTypes = await EggType.find();
-        console.log(eggTypes);
+        // console.log(eggTypes);
         res.json(eggTypes);
     } 
     catch (error) {

@@ -11,6 +11,9 @@ const cors = require('cors');
 const creatureRoutes = require('./routes/creatureRoutes');
 const armorRoutes = require('./routes/armorRoutes');
 const eggTypeRoutes = require('./routes/eggTypeRoutes');
+const resourceRoutes = require('./routes/resourceRoutes');
+const statusRoutes = require('./routes/statusRoutes');
+const eventRoutes = require('./routes/eventRoutes');
 const db = require('./db');
 
 require('dotenv').config({ path: './env' });
@@ -28,6 +31,9 @@ app.use(cors({
 app.use('/api', creatureRoutes);
 app.use('/api', armorRoutes);
 app.use('/api', eggTypeRoutes);
+app.use('/api', resourceRoutes);
+app.use('/api', eventRoutes);
+app.use('/api', statusRoutes);
 app.use(express.json());
 
 app.get('/', (req, res) => {
